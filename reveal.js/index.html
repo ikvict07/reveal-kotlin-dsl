@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RevealJS Kotlin DSL</title>
+    <meta name="description" content="Type-Safe Presentation Framework with JetBrains Theme">
+    <meta name="author" content="JikvictSlides">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="dist/reset.css" rel="stylesheet">
+    <link href="dist/reveal.css" rel="stylesheet">
+    <link href="dist/theme/jetbrains.css" rel="stylesheet" id="theme">
+    <link href="plugin/highlight/monokai.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background="#000000">
+          <h1>RevealJS Kotlin DSL</h1>
+          <h3>Type-Safe Presentation</h3>
+          <p>By ikvict</p>
+          <aside class="notes">Welcome to the RevealJS Kotlin DSL demonstration. This showcases all major features with type-safe API.</aside>
+        </section>
+        <section data-background="#000000">
+          <h2>DSL Features</h2>
+          <ul>
+            <li>Complete type-safe API with Kotlin DSL</li>
+            <li>Advanced code highlighting with line animation</li>
+            <li>Mathematical text rendering with MathJax</li>
+            <li>Vertical scroll support for sub-slides</li>
+            <li>GIF and video media support</li>
+            <li>JetBrains color scheme integration</li>
+            <li>Fragment animations and transitions</li>
+            <li>Column layouts and advanced positioning</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Code Highlighting</h2>
+          <pre><code class="hljs kotlin" data-trim="" data-line-numbers="|4,8-10|15|19-21">fun main() {
+    println(&quot;Hello, World!&quot;)
+    
+    val sum = (1..10).reduce { acc, i -&gt; acc + i }
+    println(&quot;Sum of 1 to 10 is $sum&quot;)
+    
+    val items = listOf(&quot;Kotlin&quot;, &quot;Java&quot;, &quot;Python&quot;)
+    items.forEach { item -&gt;
+        println(&quot;Item: $item&quot;)
+    }
+    
+    // Demonstrating a simple class
+    class Person(val name: String, val age: Int) {
+        fun greet() {
+            println(&quot;Hello, my name is $name &quot; +
+            &quot;and I'm $age years old.&quot;)
+        }
+    }
+    
+    val person = Person(&quot;Alice&quot;, 30)
+    person.greet()
+}</code></pre>
+          <aside class="notes">Code highlighting supports line-by-line reveals for better presentation flow.</aside>
+        </section>
+        <section>
+          <h2>Mathematical Text Support</h2>
+          <p>Inline math example:</p>
+<span class="math-inline">\(E = mc^2\)</span>
+          <p>Display math with complex formulas:</p>
+          <div class="math-display">\[
+                \begin{align}
+                \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;= \frac{4\pi}{c}\vec{\mathbf{j}} \\
+                \nabla \cdot \vec{\mathbf{E}} &amp;= 4 \pi \rho \\
+                \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp;= \vec{\mathbf{0}} \\
+                \nabla \cdot \vec{\mathbf{B}} &amp;= 0 \\
+                \vec{\mathbf{B}} \times \vec{\mathbf{E}} &amp;= \vec{\mathbf{0}} \\
+                \vec{\mathbf{H}} \times \vec{\mathbf{F}} = -\vec{\mathbf{G}} \\
+                \end{align}
+            \]</div>
+          <aside class="notes">MathJax integration allows for both inline and display mathematical expressions.</aside>
+        </section>
+        <section>
+          <h2>Fragment Animations</h2>
+          <p>Content appears step by step:</p>
+          <p class="fragment " data-fragment-index="1">This content fades in</p>
+          <p class="fragment grow" data-fragment-index="2">This content grows</p>
+          <p class="fragment shrink" data-fragment-index="3">This content shrinks</p>
+          <p class="fragment highlight-red" data-fragment-index="4">This highlights in red</p>
+          <p class="fragment fade-up" data-fragment-index="5">This fades up from bottom</p>
+          <aside class="notes">Fragment animations help control the flow of information presentation.</aside>
+        </section>
+        <section>
+          <h2>Media Support</h2>
+          <p>Video support:</p>
+          <video src="https://static.slid.es/site/homepage/v1/homepage-video-editor.mp4" width="400" height="300" controls="controls"></video>
+          <aside class="notes">Full support for images, GIFs, and videos with customizable dimensions.</aside>
+        </section>
+        <section>
+          <h2>Advanced Layouts</h2>
+          <div class="r-hstack">
+            <div style="width: 50%;">
+              <p>Left Column Content</p>
+              <p>This demonstrates the column layout system.</p>
+              <p>Content flows naturally within each column.</p>
+            </div>
+            <div style="width: 50%;">
+              <p>Right Column Content</p>
+              <p>Columns can have custom widths.</p>
+              <p>Perfect for side-by-side comparisons.</p>
+            </div>
+          </div>
+          <aside class="notes">Column layouts provide flexible content organization.</aside>
+        </section>
+        <section>
+          <section>
+            <h2>Vertical Navigation</h2>
+            <p>This is the main slide</p>
+            <p>↓ Navigate down to see sub-slides</p>
+            <aside class="notes">Vertical slides create hierarchical navigation structure.</aside>
+          </section>
+          <section>
+            <h3>Sub-slide 1</h3>
+            <p>This is a vertical sub-slide</p>
+            <pre><code class="hljs javascript" data-trim="" data-line-numbers="">console.log('Vertical slide content');</code></pre>
+            <aside class="notes">First sub-slide with code example.</aside>
+          </section>
+          <section>
+            <h3>Sub-slide 2</h3>
+            <div class="math-display">\[\sum_{i=1}^{n} x_i = x_1 + x_2 + \cdots + x_n\]</div>
+            <p>Mathematical content in vertical slides</p>
+            <aside class="notes">Second sub-slide demonstrating math in vertical navigation.</aside>
+          </section>
+        </section>
+        <section data-background-gradient="linear-gradient(135deg, #3574F0, #000000)">
+          <h1>Thank You!</h1>
+          <p>Built with ❤️ using Kotlin DSL</p>
+        </section>
+      </div>
+    </div>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script>Reveal.initialize({
+    hash: true,
+    controls: true,
+    progress: true,
+    center: true,
+    transition: 'fade',
+    plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath ]
+});</script>
+  </body>
+</html>
